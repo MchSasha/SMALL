@@ -1,0 +1,25 @@
+ifstream fInput;
+fInput.open(test);
+string row;
+  while (getline(fInput, row))
+  {
+  stringstream vertices(row);
+  string vert;
+  vector<int> adjacent_vertices;
+  while (getline(vertices, vert, ' '))
+    adjacent_vertices.push_back(stoi(vert));
+  adjacency_list.push_back(adjacent_vertices);
+  }
+    ///
+    ///
+    ///
+ofstream fOutput;
+fOutput.open(rezult);
+for (bool element : adj)
+  if (element == false) 
+  {
+    fOutput << "Disonnected graph.";
+    fOutput.close();
+  }
+fOutput << "Сonnected graph.";
+fOutput.close();
