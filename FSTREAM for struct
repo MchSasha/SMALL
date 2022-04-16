@@ -1,0 +1,47 @@
+void read(string name_of_file, vector <record>& file) {
+
+    ifstream lib;
+    lib.open(name_of_file);
+    string record_inf;
+    while (getline(lib, record_inf))
+    {
+        stringstream inf(record_inf);
+        string data;
+        record temporary;
+        int i = 0;
+        while (getline(inf, data, ' ')) {
+            if (i == 0)
+                temporary.number = stoi(data);
+            if (i == 1)
+                temporary.author = data;
+            if (i == 2)
+                temporary.name = data;
+            if (i == 3)
+                temporary.year = stoi(data);
+            if (i == 4)
+                temporary.press = data;
+            if (i == 5)
+                temporary.pages = stoi(data);
+            i++;
+        }
+        file.push_back(temporary);
+    }
+}
+void rerecord(string name_of_file, vector <record>& file)
+{
+    ofstream RErecord;
+    RErecord.open(name_of_file);
+    for (record i : file) {
+        RErecord << i.number << " " << i.author << " " << i.name << " "
+            << i.year << " " << i.press << " " << i.pages << endl;
+    }
+    RErecord.close();
+
+    RErecord.open("List_of_books.txt");
+    
+    RErecord << "Книги попавшие в список: " << endl;
+    for (record i : file) {
+        
+    }
+    RErecord.close();
+}
