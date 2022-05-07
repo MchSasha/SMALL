@@ -1,0 +1,19 @@
+int menu() {
+    cout << "MENU" << endl;
+    cout << "Choose actions from the list below.. " << endl;
+    cout << "0. Exit" << '\n'
+        << "1. Generate the array of passports" << '\n'
+        << "2. Create the tree from the created array" << '\n'
+        << "3. Add a new record in the tree" << '\n'
+        << "4. Show the tree" << '\n'
+        << "5. Balance the tree" << '\n'
+        << "6. Find the information" << '\n'
+        << "7. Delete " << '\n'
+        << "8. Show the tree Root-Left-Right\n"
+        << "9. Show the tree Left-Root-Right\n"
+        << "10. Show the tree Left-Right-Root\n"
+        << "////. Task" << '\n';
+    int n;
+    cin >> n;
+    return n;
+}
